@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Årsplan 2026/2027 · Henrik · Odense</title>
+<style>
+  :root{
+    --bg:#f6f4ee; --panel:#ffffff; --ink:#22303c; --muted:#5f6b75;
+    --line:#e3ddd1; --line2:#ece7dc; --accent:#b9772b; --accent-soft:#f3e6d2;
+    --sidebar:#22384a; --sidebar-ink:#dce6ee;
+    --mat:#2f6f9f; --nt4b:#3f8f76; --nt5c:#2e8b57; --nt6b:#6f8a32;
+    --his:#b88227; --dan:#b5544a; --idr:#7d62b3; --tech:#3f8a8a;
+    --klt:#8a8f98; --team:#d98a3d; --ferie:#c4bdab; --tema:#8b6db5; --lejr:#df8a3c;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;font-size:15px;
+  }
+  h1,h2,h3{font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;font-weight:600;color:#1c2b38;letter-spacing:.1px}
+  a{color:var(--accent)}
+  .layout{display:flex;min-height:100vh}
+  /* sidebar */
+  .sidebar{
+    width:248px;flex:0 0 248px;background:var(--sidebar);color:var(--sidebar-ink);
+    position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:22px 18px;
+  }
+  .brand{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;color:#fff;line-height:1.25;margin-bottom:2px}
+  .brand small{display:block;font-family:inherit;font-size:12.5px;color:#9fb4c4;font-weight:400;margin-top:4px}
+  nav.menu{margin-top:26px;display:flex;flex-direction:column;gap:2px}
+  nav.menu a{
+    color:var(--sidebar-ink);text-decoration:none;padding:9px 12px;border-radius:7px;font-size:14.5px;
+    display:flex;align-items:center;gap:10px;transition:background .15s;
+  }
+  nav.menu a:hover{background:rgba(255,255,255,.08)}
+  nav.menu a.active{background:#fff;color:var(--sidebar);font-weight:600}
+  nav.menu a .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .side-foot{margin-top:auto;font-size:11.5px;color:#8aa0b2;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
+  /* main */
+  .main{flex:1;min-width:0;padding:34px 40px 80px;max-width:1180px}
+  section{margin-bottom:54px;scroll-margin-top:20px}
+  .eyebrow{text-transform:uppercase;letter-spacing:1.5px;font-size:11.5px;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2.sec{font-size:25px;margin:0 0 4px}
+  .lead{color:var(--muted);max-width:70ch;margin:0 0 20px}
+  /* cards / facts */
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .fact{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+  .fact .num{font-family:"Iowan Old Style",Georgia,serif;font-size:27px;color:#1c2b38;line-height:1}
+  .fact .lbl{color:var(--muted);font-size:12.5px;margin-top:6px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;font-size:13px}
+  .swatch{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+  /* schedule grid */
+  .grid-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table.sched{border-collapse:collapse;width:100%;min-width:640px}
+  table.sched th,table.sched td{border:1px solid var(--line2);padding:0;text-align:left;vertical-align:top}
+  table.sched thead th{background:#2d4459;color:#eaf1f7;font-weight:600;padding:10px 12px;font-size:13.5px;font-family:inherit}
+  table.sched tbody th{background:#eef1f4;text-align:center;width:46px;font-weight:700;color:#566370;font-size:13px;padding:8px}
+  .cell{padding:8px 10px;min-height:40px}
+  .cell .cls{font-weight:700;font-size:13px}
+  .cell .sub{font-size:11.5px;color:#fff;opacity:.92;display:inline-block;margin-top:2px;padding:1px 7px;border-radius:5px}
+  .cell.empty{background:repeating-linear-gradient(45deg,#fafafa,#fafafa 6px,#f3f3f3 6px,#f3f3f3 12px)}
+  /* gantt */
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px}
+  .filterbtn{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 13px;border-radius:999px;
+    cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
+  .filterbtn:hover{border-color:#c9bfa6}
+  .filterbtn.active{background:#22384a;border-color:#22384a;color:#fff}
+  .search{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;min-width:200px;font-family:inherit;background:var(--panel);color:var(--ink)}
+  .gantt-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:0}
+  .gantt{min-width:980px;position:relative}
+  .g-row{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line2)}
+  .g-row:last-child{border-bottom:none}
+  .g-label{padding:12px 12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;border-right:1px solid var(--line2);background:#fbfaf6}
+  .g-track{position:relative;height:54px}
+  .g-weeks{display:grid;position:relative;height:100%}
+  .wk{border-right:1px solid #f1ece1;position:relative}
+  .wk.ferie{background:repeating-linear-gradient(45deg,#efeadd,#efeadd 5px,#e7e0cf 5px,#e7e0cf 10px)}
+  .wk-head{font-size:10px;color:#9aa0a8;text-align:center;padding:3px 0;border-right:1px solid #f1ece1;height:20px;line-height:14px}
+  .wk-head.ferie{color:#b09a5e;font-weight:600}
+  .bar{position:absolute;top:9px;height:36px;border-radius:6px;color:#fff;font-size:11.5px;font-weight:600;
+    padding:3px 8px;overflow:hidden;display:flex;align-items:center;cursor:default;box-shadow:0 1px 2px rgba(0,0,0,.12);white-space:nowrap}
+  .bar.tema{background:var(--tema)!important;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.18),rgba(255,255,255,.18) 4px,transparent 4px,transparent 8px)!important}
+  .bar.lejr{background:var(--lejr)!important}
+  .axis{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line)}
+  .axis .pad{border-right:1px solid var(--line2);background:#fbfaf6}
+  .tooltip{position:fixed;z-index:50;background:#1c2b38;color:#fff;padding:9px 12px;border-radius:8px;font-size:12.5px;
+    max-width:260px;pointer-events:none;opacity:0;transition:opacity .12s;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+  .tooltip b{color:#ffd9ad}
+  /* plan cards */
+  .plan-group{margin-bottom:26px}
+  .plan-group h3{font-size:17px;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+  .plan-group h3 .tag{font-size:11.5px;color:#fff;padding:2px 9px;border-radius:6px;font-family:inherit;font-weight:600}
+  .plan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px}
+  .pc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 14px;border-left:4px solid var(--mat);position:relative}
+  .pc.tema{border-left-color:var(--tema);background:#faf7fc}
+  .pc.lejr{border-left-color:var(--lejr);background:#fdf6ee}
+  .pc .wkbadge{font-size:11.5px;font-weight:700;color:var(--accent);letter-spacing:.3px}
+  .pc h4{margin:3px 0 7px;font-size:14.5px;font-family:inherit;font-weight:700;color:#1c2b38}
+  .pc .focus{font-size:12.5px;color:var(--muted);margin-bottom:8px}
+  .pc .eval{font-size:11.5px;color:#445;display:inline-flex;align-items:center;gap:6px;background:#f4f1ea;border-radius:6px;padding:3px 8px}
+  .pc .forlobLink{font-size:12px;font-weight:600;color:var(--mat);text-decoration:none;display:inline-flex;align-items:center;gap:5px;background:#eef4f9;border:1px solid #d3e2ee;border-radius:6px;padding:4px 9px}
+  .pc .forlobLink:hover{background:#e2eef7}
+  /* highlight cards */
+  .hcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .hcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;border-top:4px solid var(--lejr)}
+  .hcard.tema{border-top-color:var(--tema)}
+  .hcard h3{margin:0 0 4px;font-size:18px}
+  .hcard .when{color:var(--accent);font-weight:600;font-size:13px;margin-bottom:10px}
+  .hcard ul{margin:8px 0 0;padding-left:18px;color:#3a4750;font-size:13.5px}
+  .hcard ul li{margin-bottom:5px}
+  /* calendar */
+  .caltable{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .caltable th,.caltable td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line2);font-size:13.5px}
+  .caltable thead th{background:#2d4459;color:#eaf1f7;font-family:inherit;font-weight:600}
+  .caltable tr.special td{background:#fbf3e8}
+  .caltable .pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;color:#fff}
+  .note{background:var(--accent-soft);border:1px solid #e7cfa6;border-radius:10px;padding:13px 16px;font-size:13.5px;margin-top:14px;color:#5b4426}
+  @media(max-width:820px){
+    .layout{flex-direction:column}
+    .sidebar{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px;padding:14px 16px}
+    .brand{width:100%;margin-bottom:8px}
+    nav.menu{flex-direction:row;flex-wrap:wrap;margin-top:0;gap:4px}
+    nav.menu a{padding:6px 10px;font-size:13px}
+    .side-foot{display:none}
+    .main{padding:22px 18px 60px}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">Årsplan 2026/27<small>Henrik · Odense Kommune</small></div>
+    <nav class="menu" id="menu">
+      <a href="#overblik" class="active"><span class="dot"></span>Overblik</a>
+      <a href="#ugeskema"><span class="dot"></span>Ugeskema</a>
+      <a href="#aarshjul"><span class="dot"></span>Årshjul</a>
+      <a href="#aarsplaner"><span class="dot"></span>Årsplaner</a>
+      <a href="#vigtige"><span class="dot"></span>Vigtige uger</a>
+      <a href="#kalender"><span class="dot"></span>Kalender</a>
+    </nav>
+    <div class="side-foot">Interaktivt overblik · klik på et fag for at filtrere.<br>Kilder: Fælles Mål (uvm.dk), naturfagene.dk, skoledu.dk, historiefidusen.dk &amp; Odense Kommunes feriekalender.</div>
+  </aside>
+
+  <main class="main">
+    <!-- OVERBLIK -->
+    <section id="overblik">
+      <div class="eyebrow">Skoleåret 2026/2027</div>
+      <h2 class="sec">Overblik</h2>
+      <p class="lead">Du er klasselærer for 5C og underviser i matematik, natur/teknologi, historie, idræt og teknologiforståelse på tværs af 4.–6. klasse (dansk 5B er ikke medtaget her). Her er hele året samlet ét sted. Tyngdepunkterne — matematik 5C og N/T på tre klassetrin — har fulde årsplaner.</p>
+      <div class="facts">
+        <div class="fact"><div class="num">~25</div><div class="lbl">lektioner pr. uge</div></div>
+        <div class="fact"><div class="num">9</div><div class="lbl">fag/hold</div></div>
+        <div class="fact"><div class="num">~40</div><div class="lbl">undervisningsuger</div></div>
+        <div class="fact"><div class="num">5C</div><div class="lbl">din klasse</div></div>
+      </div>
+      <div class="chips" id="legendChips"></div>
+    </section>
+
+    <!-- UGESKEMA -->
+    <section id="ugeskema">
+      <div class="eyebrow">Din uge</div>
+      <h2 class="sec">Ugeskema</h2>
+      <p class="lead">Farvekodet efter fag. Bemærk dobbeltlektionerne — oplagt til natur/teknologi-forsøg og sammenhængende forløb.</p>
+      <div class="grid-wrap"><table class="sched" id="schedTable"></table></div>
+    </section>
+
+    <!-- AARSHJUL -->
+    <section id="aarshjul">
+      <div class="eyebrow">Året på tværs</div>
+      <h2 class="sec">Årshjul</h2>
+      <p class="lead">Forløb fordelt på skoleugerne (uge 33 → 25). Skraverede felter er ferie. Klik et fag for at fremhæve. Hold musen over en bjælke for detaljer.</p>
+      <div class="controls" id="ganttFilters"></div>
+      <div class="gantt-wrap">
+        <div class="gantt" id="gantt"></div>
+      </div>
+    </section>
+
+    <!-- AARSPLANER -->
+    <section id="aarsplaner">
+      <div class="eyebrow">Forløb fag for fag</div>
+      <h2 class="sec">Årsplaner</h2>
+      <p class="lead">Hvert forløb er koblet til Fælles Måls kompetenceområder. N/T-forløbene på 4B, 5C og 6B er parallellagt uge for uge — samme forløb fra naturfagene.dk går på tværs af klassetrinnene (med grenet niveau i "Bæredygtighed og klima"), så du kan samle materialer og forberede én gang til alle tre hold. Filtrér på hold, eller søg i emnerne.</p>
+      <div class="controls" id="planFilters"></div>
+      <div class="controls"><input class="search" id="planSearch" placeholder="Søg i forløb, fx „brøker“ eller „vand“…"></div>
+      <div id="planContainer"></div>
+    </section>
+
+    <!-- VIGTIGE UGER -->
+    <section id="vigtige">
+      <div class="eyebrow">Husk at planlægge</div>
+      <h2 class="sec">Vigtige uger</h2>
+      <div class="hcards">
+        <div class="hcard">
+          <h3>Lejrskole i Aarhus</h3>
+          <div class="when">Uge 13 · 30. marts – 2. april 2027 · 5. årgang</div>
+          <div>I bor på vandrehjem i Risskov midt i skoven. Brug turen tværfagligt:</div>
+          <ul>
+            <li><b>Moesgaard Museum</b> – menneske, natur og evolution (N/T &amp; historie)</li>
+            <li><b>Den Gamle By</b> – byliv og historie</li>
+            <li><b>ARoS</b> – kunst, farver og perspektiv (billedkunst &amp; dansk)</li>
+            <li><b>Skoven ved Risskov</b> – feltarbejde og naturfaglig logbog</li>
+            <li><b>Matematik på tur</b> – afstande, budget, målestok, køreplaner</li>
+            <li><b>Idræt og teknologiforståelse</b> – skovlege/teambuilding og teknologiobservationer indgår i programmet i stedet for ordinær undervisning</li>
+          </ul>
+        </div>
+        <div class="hcard tema">
+          <h3>Temauge – mellemtrinnet</h3>
+          <div class="when">Uge 41 · 5.–9. oktober 2026 · 4.–6. klasse</div>
+          <div>Fælles emne på hele mellemtrinnet. Emnet ligger ikke fast endnu og aftales med kollegerne. Berører matematik 5C, N/T på 4B, 5C og 6B, historie 5C/5B, idræt 4A/5C og teknologiforståelse 5C.</div>
+          <ul><li>Påmindelse er sat til <b>mandag 14. september 2026</b>.</li></ul>
+        </div>
+        <div class="hcard tema">
+          <h3>Temauge – årgangen</h3>
+          <div class="when">Uge 6 · 8.–12. februar 2027 · 5. årgang</div>
+          <div>Fælles emne på 5. årgang (5C og 5B). Aftales i TEAM5. Berører matematik 5C, N/T 5C, historie 5C/5B, idræt 5C og teknologiforståelse 5C.</div>
+          <ul><li>Påmindelse er sat til <b>mandag 18. januar 2027</b>.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- KALENDER -->
+    <section id="kalender">
+      <div class="eyebrow">Odense Kommune</div>
+      <h2 class="sec">Kalender &amp; ferier</h2>
+      <p class="lead">Ferieplan for skoleåret 2026/2027. Skolen møder igen efter jul tirsdag 5. januar og efter påske tirsdag 30. marts.</p>
+      <table class="caltable" id="calTable"></table>
+      <div class="note">Tjek altid de konkrete datoer i Aula — enkelte skoler justerer fridage og emneuger inden for kommunens ramme.</div>
+    </section>
+  </main>
+</div>
+
+<div class="tooltip" id="tip"></div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const SUBJECT_COLORS = {MAT:'--mat',NT:'--nt5c',HIS:'--his',DAN:'--dan',IDR:'--idr',TECH:'--tech',KLT:'--klt',TEAM:'--team'};
+function cssv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+
+const legend = [
+  ['Matematik','--mat'],['Natur/teknologi','--nt5c'],['Historie','--his'],['Dansk','--dan'],
+  ['Idræt','--idr'],['Teknologi','--tech'],['Temauge','--tema'],['Lejrskole','--lejr'],['Ferie','--ferie']
+];
+
+// schedule grid: 7 lektioner x 5 dage. each cell [class, subjectKey] or null
+const DAYS = ['Mandag','Tirsdag','Onsdag','Torsdag','Fredag'];
+const SCHED = [
+  [['5C','MAT'],['5C','MAT'],['5C','HIS'],null,null],
+  [['5C','MAT'],['5C','MAT'],['5C','HIS'],null,null],
+  [['4B','NT'],['5C','KLT'],['5C','TECH'],null,['5C','NT']],
+  [['4B','NT'],['4B','NT'],['5C','TECH'],['5C','MAT'],['5C','NT']],
+  [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
+  [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
+  [null,['','TEAM5'],null,null,null]
+];
+const SUBLABEL = {MAT:'Matematik',NT:'N/T',HIS:'Historie',DAN:'Dansk',IDR:'Idræt (hal)',TECH:'Teknologi',KLT:'Klassens tid',TEAM5:'Teammøde'};
+
+// ordered school weeks
+const WEEKS = [];
+for(let w=33;w<=53;w++)WEEKS.push(w);
+for(let w=1;w<=25;w++)WEEKS.push(w);
+const FERIE = {42:'Efterårsferie',52:'Juleferie',53:'Juleferie',7:'Vinterferie',12:'Påskeferie'};
+function wkIndex(w){ // first occurrence handling 33..53 then 1..25
+  if(w>=33) return WEEKS.indexOf(w);
+  return 21 + (w-1); // weeks 1..25 start at index 21
+}
+
+// subjects + forløb. kind: normal|tema|lejr
+const PLANS = [
+  {id:'mat5c',name:'Matematik',cls:'5C',color:'--mat',meta:'5 lekt/uge · følger Skoledu.dk',
+   forlob:[
+    {w:'33–35',t:'Mere om multiplikation',f:'Smarte gangestrategier, hjælpetegninger og noter',link:'https://app.skoledu.dk/opgaver/mellemtrin/multiplikation/forloeb/mere-om-multiplikation'},
+    {w:'36–37',t:'Polygoners egenskaber',f:'Sortere polygoner, sammenligne firkanter, GeoGebra',link:'https://app.skoledu.dk/opgaver/mellemtrin/plane-figurer/forloeb/polygoners-egenskaber'},
+    {w:'38–39',t:'Højder og egenskaber',f:'Højden i en trekant, sortere trekanter',link:'https://app.skoledu.dk/opgaver/mellemtrin/plane-figurer/forloeb/hoejder-og-egenskaber'},
+    {w:'40',t:'Mere om areal og omkreds',f:'Areal af trekanter/trapezer, omkreds af polygoner (afkortet pga. temauge)',link:'https://app.skoledu.dk/opgaver/mellemtrin/areal-og-omkreds/forloeb/mere-om-areal-og-omkreds'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',kind:'tema'},
+    {w:'43–45',t:'Mere om division',f:'Division med store tal, forskellige strategier',link:'https://app.skoledu.dk/opgaver/mellemtrin/division/forloeb/mere-om-division'},
+    {w:'46–47',t:'Regn med negative tal',f:'Regne med og opstille udtryk med negative tal',link:'https://app.skoledu.dk/opgaver/mellemtrin/tal/forloeb/regn-med-negative-tal'},
+    {w:'48–49',t:'Faglig læsning',f:'Læse tekstopgaver, bruge en læseopskrift',link:'https://app.skoledu.dk/opgaver/mellemtrin/matematikkens-sprog/forloeb/faglig-laesning'},
+    {w:'50–51',t:'Regningsarternes hierarki',f:'Bruge hierarkiet, opstille blandede regnestykker',link:'https://app.skoledu.dk/opgaver/mellemtrin/de-fire-regningsarter/forloeb/regningsarternes-hierarki'},
+    {w:'1–2',t:'Regn i hverdagen',f:'De fire regningsarter i hverdagen, regneudtryk',link:'https://app.skoledu.dk/opgaver/mellemtrin/de-fire-regningsarter/forloeb/regn-i-hverdagen'},
+    {w:'3–4',t:'Ligninger med x',f:'Blokmodellen, løse ligninger, regnehistorier',link:'https://app.skoledu.dk/opgaver/mellemtrin/ligninger/forloeb/ligninger-med-x'},
+    {w:'5',t:'Flytninger',f:'Spejling, parallelforskydning, drejning (afkortet pga. temauge)',link:'https://app.skoledu.dk/opgaver/mellemtrin/placering-og-flytning/forloeb/flytninger-0'},
+    {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',kind:'tema'},
+    {w:'8–9',t:'Sammenhænge',f:'Grafer og tabeller, digitale værktøjer',link:'https://app.skoledu.dk/opgaver/mellemtrin/funktioner/forloeb/sammenhaenge'},
+    {w:'10–11',t:'Brøker med samme nævner',f:'Addition og subtraktion af brøker (samme nævner)',link:'https://app.skoledu.dk/opgaver/mellemtrin/broeker-og-procent/forloeb/broeker-med-samme-naevner'},
+    {w:'13',t:'Lejrskole i Aarhus',f:'Anvendt matematik: afstande, budget, målestok',kind:'lejr'},
+    {w:'14',t:'Brøker uden samme nævner',f:'Fællesnævner, regne med forskellige nævnere (rykket fra uge 13)',link:'https://app.skoledu.dk/opgaver/mellemtrin/broeker-og-procent/forloeb/broeker-uden-samme-naevner'},
+    {w:'15',t:'Hele koordinatsystemet',f:'Punkter i hele koordinatsystemet',link:'https://app.skoledu.dk/opgaver/mellemtrin/koordinatsystemet/forloeb/hele-koordinatsystemet'},
+    {w:'16–17',t:'Hvad er procent?',f:'Omregne mellem procent, brøk og decimaltal',link:'https://app.skoledu.dk/opgaver/mellemtrin/broeker-og-procent/forloeb/hvad-er-procent'},
+    {w:'18',t:'Lav egne undersøgelser',f:'Spørgsmål, tabeller, diagrammer, præsentation',link:'https://app.skoledu.dk/opgaver/mellemtrin/statistik/forloeb/lav-egne-undersoegelser'},
+    {w:'19–20',t:'Overslagsregning',f:'Overslag med de fire regningsarter, priser',link:'https://app.skoledu.dk/opgaver/mellemtrin/de-fire-regningsarter/forloeb/overslagsregning'},
+    {w:'21',t:'Rumfang og måleenheder',f:'Måleglas, enheder for rumfang, literpriser',link:'https://app.skoledu.dk/opgaver/mellemtrin/rumlige-figurer/forloeb/rumfang-og-maaleenheder'},
+    {w:'22',t:'Rumfang af kasser',f:'Rumfang af kasser, bygge kasser, omregne enheder',link:'https://app.skoledu.dk/opgaver/mellemtrin/rumlige-figurer/forloeb/rumfang-af-kasser'},
+    {w:'23–24',t:'Simuleringer',f:'Simuleringer i regneark, er et spil fair?',link:'https://app.skoledu.dk/opgaver/mellemtrin/sandsynlighed/forloeb/simuleringer'},
+    {w:'25',t:'Perspektivtegning',f:'Forsvindingspunkter, front- og krydsperspektiv',link:'https://app.skoledu.dk/opgaver/mellemtrin/geometrisk-tegning/forloeb/perspektivtegning'}
+   ]},
+  {id:'nt4b',name:'Natur/teknologi',cls:'4B',color:'--nt4b',meta:'3 lekt/uge · Man 3–4, Tir 4 · forløb fra naturfagene.dk, parallellagt med 5C/6B',
+   forlob:[
+    {w:'33–36',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
+    {w:'37–40',t:'Krop og træning',f:'Muskler, kondition og pulsforsøg — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/krop-og-traening'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
+    {w:'43–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 3.–4. kl. (5C/6B kører 5.–6.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
+    {w:'49–51',t:'Myter og videnskab',f:'Fra myter til naturvidenskabelige forklaringer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/myter-og-videnskab'},
+    {w:'2–6',t:'Kommunikation',f:'Fra sanser til satellitter – hvordan spredes information? Fælles forløb for 4.–6. kl. (4B er ikke omfattet af temauge uge 6)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kommunikation'},
+    {w:'8–11',t:'Kort og kompas',f:'Kortlæsning, målestoksforhold og orientering i naturen — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kort-og-kompas'},
+    {w:'13',t:'Domesticering',f:'Hvordan blev vilde dyr og planter til husdyr og afgrøder? Fælles kortforløb for 4.–6. kl. (5C er på lejrskole denne uge)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/domesticering'},
+    {w:'14–17',t:'Danske øer',f:'Geografi, natur og levevilkår på danske øer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/danske-oeer'},
+    {w:'18',t:'Stjerner',f:'Stjernebilleder og stjernehimlens bevægelse — fælles kortforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/stjerner'},
+    {w:'19–22',t:'Planeter',f:'Solsystemets planeter og deres kendetegn — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/planeter'},
+    {w:'23–25',t:'Forårsløb og evaluering',f:'Orienteringsløb i naturen med naturfaglige poster; afrunding af året — fælles for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/foraarsloeb'}
+   ]},
+  {id:'nt5c',name:'Natur/teknologi',cls:'5C',color:'--nt5c',meta:'2 lekt/uge · Fre 3–4 · forløb fra naturfagene.dk, parallellagt med 4B/6B',
+   forlob:[
+    {w:'33–36',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
+    {w:'37–40',t:'Krop og træning',f:'Muskler, kondition og pulsforsøg — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/krop-og-traening'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
+    {w:'43–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 5.–6. kl. (4B kører 3.–4.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
+    {w:'49–51',t:'Myter og videnskab',f:'Fra myter til naturvidenskabelige forklaringer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/myter-og-videnskab'},
+    {w:'2–5',t:'Kommunikation',f:'Fra sanser til satellitter – hvordan spredes information? Fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kommunikation'},
+    {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',e:'—',kind:'tema'},
+    {w:'8–12',t:'Kort og kompas',f:'Kortlæsning, målestoksforhold og orientering i naturen — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kort-og-kompas'},
+    {w:'13',t:'Lejrskole i Aarhus',f:'Naturfaglige observationer i felten + Moesgaard Museum (4B/6B arbejder parallelt med „Domesticering" hjemme)',e:'Naturfaglig logbog',kind:'lejr'},
+    {w:'14–17',t:'Danske øer',f:'Geografi, natur og levevilkår på danske øer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/danske-oeer'},
+    {w:'18',t:'Stjerner',f:'Stjernebilleder og stjernehimlens bevægelse — fælles kortforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/stjerner'},
+    {w:'19–22',t:'Planeter',f:'Solsystemets planeter og deres kendetegn — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/planeter'},
+    {w:'23–25',t:'Forårsløb og evaluering',f:'Orienteringsløb i naturen med naturfaglige poster; afrunding af året — fælles for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/foraarsloeb'}
+   ]},
+  {id:'nt6b',name:'Natur/teknologi',cls:'6B',color:'--nt6b',meta:'2 lekt/uge · Man 5–6 · forløb fra naturfagene.dk, parallellagt med 4B/5C',
+   forlob:[
+    {w:'33–36',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
+    {w:'37–40',t:'Krop og træning',f:'Muskler, kondition og pulsforsøg — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/krop-og-traening'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
+    {w:'43–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 5.–6. kl. (4B kører 3.–4.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
+    {w:'49–51',t:'Myter og videnskab',f:'Fra myter til naturvidenskabelige forklaringer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/myter-og-videnskab'},
+    {w:'2–6',t:'Kommunikation',f:'Fra sanser til satellitter – hvordan spredes information? Fælles forløb for 4.–6. kl. (6B er ikke omfattet af temauge uge 6)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kommunikation'},
+    {w:'8–11',t:'Kort og kompas',f:'Kortlæsning, målestoksforhold og orientering i naturen — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kort-og-kompas'},
+    {w:'13',t:'Domesticering',f:'Hvordan blev vilde dyr og planter til husdyr og afgrøder? Fælles kortforløb for 4.–6. kl. (5C er på lejrskole denne uge)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/domesticering'},
+    {w:'14–17',t:'Danske øer',f:'Geografi, natur og levevilkår på danske øer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/danske-oeer'},
+    {w:'18',t:'Stjerner',f:'Stjernebilleder og stjernehimlens bevægelse — fælles kortforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/stjerner'},
+    {w:'19–22',t:'Planeter',f:'Solsystemets planeter og deres kendetegn — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/planeter'},
+    {w:'23–25',t:'Forårsløb og evaluering',f:'Orienteringsløb i naturen med naturfaglige poster; afrunding af året — fælles for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/foraarsloeb'}
+   ]},
+  {id:'his',name:'Historie',cls:'5C & 5B',color:'--his',meta:'2 lekt/uge · 5C ons, 5B tir · følger historiefidusen.dk',
+   forlob:[
+    {w:'33',t:'Opstart',f:'Introduktion til årets temaer; vi tager tråden op fra middelalderens begyndelse'},
+    {w:'34–40',t:'Korstog og middelalderen',f:'Kirkens magt, Valdemar Sejr & Dannebrog, Den Sorte Død, mordet i Finderup Lade (afkortet pga. temauge uge 41)'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',kind:'tema'},
+    {w:'43–51',t:'Margrete d. 1. og Kalmarunionen',f:'Kanonpunkt: genopbygning, kvinders rolle, hansestæderne. „Dronningerækken“',link:'https://www.historiefidusen.dk/historiekanonen/kalmarunionen'},
+    {w:'1',t:'Vores Margrete',f:'Nutidens Margrethe, historiebrug; vendespil om regenten'},
+    {w:'2–5',t:'Renæssancen og nye tanker',f:'Brud og kontinuitet, kunst og opfindelser; gruppeoplæg (afkortet pga. temauge uge 6)'},
+    {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',kind:'tema'},
+    {w:'8–11',t:'Hvad er et museum?',f:'Historieformidling; besøg på Møntergården/Den Fynske Landsby; eleverne laver eget museum',link:'https://www.historiefidusen.dk/historiebrug'},
+    {w:'13',t:'Lejrskole i Aarhus',f:'Den Gamle By og Moesgaard Museum; historiebrug og kildearbejde',kind:'lejr'},
+    {w:'14–20',t:'Columbus og andre opdagelsesrejsende',f:'Kanonpunkt: opdagelsesrejser, nye varer; bevægelse i historie (orienteringsløb)',link:'https://www.historiefidusen.dk/historiekanonen/columbus'},
+    {w:'21–24',t:'Historie-Stratego',f:'Historiske personer og kanonpunkter (Harald Blåtand, Absalon); perspektivering til nutiden',link:'https://www.historiefidusen.dk/blandet-godt/gode-spil'},
+    {w:'25',t:'Afslutning',f:'Afsluttende historielege og opsamling på årets temaer',link:'https://www.historiefidusen.dk/vikartimen'}
+   ]},
+  {id:'idr4a',name:'Idræt',cls:'4A',color:'--idr',meta:'2 lekt/uge · Tor 5–6 · i hallen · forløb fra skoleidraet.dk (mellemtrin)',
+   forlob:[
+    {w:'33–39',t:'Boldbasis og fangelege',f:'Boldkontrol, kast og gribe, positions- og samarbejdslege',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/boldspil-og-boldbasis-mellemtrin/'},
+    {w:'40, 43–48',t:'Løb, spring og kast',f:'Atletikgrundformer; efterårsatletikstævne i skolegården',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/loeb-spring-og-kast-mellemtrin/'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
+    {w:'49–6',t:'Redskabsaktiviteter og dans/udtryk',f:'Bænke, ribber og måtter; enkel rytmik og dans',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/redskabsaktiviteter-mellemtrin-undervisningsmateriale/'},
+    {w:'8–13',t:'Kropsbasis og fysisk træning',f:'Koordination, balance og pulstræning inde',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/kropsbasis-mellemtrin-undervisningsmateriale/'},
+    {w:'14–19',t:'Boldspil: håndbold og rundbold',f:'Kast, skud og forsvar/angreb',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/boldspil-og-boldbasis-mellemtrin/'},
+    {w:'20–25',t:'Løb, spring og kast – forår',f:'Sprint, spring og kast frem mod idrætsdagen',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/loeb-spring-og-kast-mellemtrin/'}
+   ]},
+  {id:'idr5c',name:'Idræt',cls:'5C',color:'--idr',meta:'2 lekt/uge · Fre 5–6 · i hallen · forløb fra skoleidraet.dk (mellemtrin)',
+   forlob:[
+    {w:'33–39',t:'Boldbasis og fangelege',f:'Boldkontrol, kast og gribe, positions- og samarbejdslege',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/boldspil-og-boldbasis-mellemtrin/'},
+    {w:'40, 43–48',t:'Løb, spring og kast',f:'Atletikgrundformer; efterårsatletikstævne i skolegården',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/loeb-spring-og-kast-mellemtrin/'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
+    {w:'49–5',t:'Redskabsaktiviteter og dans/udtryk',f:'Bænke, ribber og måtter; enkel rytmik og dans',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/redskabsaktiviteter-mellemtrin-undervisningsmateriale/'},
+    {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',e:'—',kind:'tema'},
+    {w:'8–12',t:'Kropsbasis og fysisk træning',f:'Koordination, balance og pulstræning inde',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/kropsbasis-mellemtrin-undervisningsmateriale/'},
+    {w:'13',t:'Lejrskole i Aarhus',f:'Natur og udeliv: vandreture, skovlege og teambuilding ved vandrehjemmet i Risskov',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/undervisningsmateriale-natur-og-udeliv/',kind:'lejr'},
+    {w:'14–19',t:'Boldspil: håndbold og rundbold',f:'Kast, skud og forsvar/angreb',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/boldspil-og-boldbasis-mellemtrin/'},
+    {w:'20–25',t:'Løb, spring og kast – forår',f:'Sprint, spring og kast frem mod idrætsdagen',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/loeb-spring-og-kast-mellemtrin/'}
+   ]},
+  {id:'tech5c',name:'Teknologiforståelse',cls:'5C',color:'--tech',meta:'2 lekt/uge · Ons 3–4 · forsøgsfag · forløb fra tekforsøget.dk, emu.dk m.fl.',
+   forlob:[
+    {w:'33–39',t:'Digitale spor og myndiggørelse',f:'Hvad er teknologiforståelse? Data, digitale fodspor og kildekritik online',link:'https://emu.dk/grundskole/teknologiforstaaelse/bliv-klogere-paa-teknologiforstaaelse'},
+    {w:'40, 43–48',t:'Computationel tankegang',f:'Algoritmer i hverdagen, sekvenser og indledende programmering',link:'https://studio.code.org/courses'},
+    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
+    {w:'49–5',t:'Digital design: fra idé til prototype',f:'Designprocessen i praksis: brainstorm, mock-ups og brugertest',link:'https://emu.dk/grundskole/teknologiforstaaelse/teknologiforstaaelse-i-praksis'},
+    {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',e:'—',kind:'tema'},
+    {w:'8–12',t:'Programmering med micro:bit',f:'Sensorer, input/output og simple programmer med Ultra:bit',link:'https://www.dr.dk/skole/ultrabit'},
+    {w:'13',t:'Lejrskole i Aarhus',f:'Teknologi i praksis – evt. besøg på museum/virksomhed som del af lejrskoleprogrammet',e:'Observationsnoter',kind:'lejr'},
+    {w:'14–19',t:'Teknologisk handleevne',f:'Teknologiens konsekvenser, algoritmer i sociale medier og etik',link:'https://www.tjekdet.dk/undervisning/begrebsguide-til-teknologiforstaaelse-med-16-smaa-videoer'},
+    {w:'20–25',t:'Afsluttende designprojekt',f:'Løs et hverdagsproblem med teknologi; præsentation for klassen',link:'https://xn--tekforsget-6cb.dk/forlob/'}
+   ]}
+];
+
+const CAL = [
+  ['Skolestart','Mandag 10. august 2026','—','',false],
+  ['Efterårsferie (uge 42)','Lør 10. okt. 2026','Søn 18. okt. 2026','--ferie',false],
+  ['Temauge mellemtrin (uge 41)','Man 5. okt. 2026','Fre 9. okt. 2026','--tema',true],
+  ['Juleferie','Man 21. dec. 2026','Man 4. jan. 2027','--ferie',false],
+  ['Temauge årgang (uge 6)','Man 8. feb. 2027','Fre 12. feb. 2027','--tema',true],
+  ['Vinterferie (uge 7)','Lør 13. feb. 2027','Søn 21. feb. 2027','--ferie',false],
+  ['Påskeferie','Lør 20. marts 2027','Man 29. marts 2027','--ferie',false],
+  ['Lejrskole Aarhus (uge 13)','Tir 30. marts 2027','Fre 2. april 2027','--lejr',true],
+  ['Kr. Himmelfart','Tor 6. maj 2027','Fre 7. maj 2027','--ferie',false],
+  ['Pinse (2. pinsedag)','Man 17. maj 2027','—','--ferie',false],
+  ['Sidste skoledag','Fredag 25. juni 2027','—','',false],
+  ['Sommerferie','Lør 26. juni 2027','Søn 8. aug. 2027','--ferie',false]
+];
+
+/* ---------------- RENDER ---------------- */
+// legend
+document.getElementById('legendChips').innerHTML = legend.map(([n,c])=>
+  `<span class="chip"><span class="swatch" style="background:${cssv(c)}"></span>${n}</span>`).join('');
+
+// schedule
+(function(){
+  let html='<thead><tr><th>Lekt.</th>'+DAYS.map(d=>`<th>${d}</th>`).join('')+'</tr></thead><tbody>';
+  SCHED.forEach((row,i)=>{
+    html+=`<tr><th>${i+1}</th>`;
+    row.forEach(cell=>{
+      if(!cell){html+='<td><div class="cell empty"></div></td>';return;}
+      const [cls,sub]=cell;
+      const col=cssv(SUBJECT_COLORS[sub]||'--klt');
+      html+=`<td><div class="cell"><div class="cls">${cls||''}</div><span class="sub" style="background:${col}">${SUBLABEL[sub]||sub}</span></div></td>`;
+    });
+    html+='</tr>';
+  });
+  html+='</tbody>';
+  document.getElementById('schedTable').innerHTML=html;
+})();
+
+// gantt
+const tip=document.getElementById('tip');
+function showTip(e,html){tip.innerHTML=html;tip.style.opacity='1';moveTip(e);}
+function moveTip(e){let x=e.clientX+14,y=e.clientY+14;if(x>window.innerWidth-280)x=e.clientX-270;tip.style.left=x+'px';tip.style.top=y+'px';}
+function hideTip(){tip.style.opacity='0';}
+
+function parseWeeks(label){ // returns array of {start,len} index segments
+  const segs=[];
+  label.split(',').forEach(part=>{
+    part=part.trim();
+    if(part.includes('–')||part.includes('-')){
+      const [a,b]=part.split(/[–-]/).map(s=>parseInt(s,10));
+      const ia=wkIndex(a), ib=wkIndex(b);
+      segs.push({start:ia,len:ib-ia+1});
+    } else {
+      const ia=wkIndex(parseInt(part,10));
+      segs.push({start:ia,len:1});
+    }
+  });
+  return segs;
+}
+
+let ganttFilter='all';
+function renderGantt(){
+  const N=WEEKS.length;
+  const colpct=100/N;
+  // axis
+  let head='<div class="axis"><div class="pad"></div><div class="g-weeks" style="grid-template-columns:repeat('+N+',1fr)">';
+  WEEKS.forEach(w=>{ head+=`<div class="wk-head${FERIE[w]?' ferie':''}">${w}</div>`; });
+  head+='</div></div>';
+  let rows='';
+  PLANS.forEach(p=>{
+    const dim = (ganttFilter!=='all' && ganttFilter!==p.id) ? 'opacity:.28;' : '';
+    rows+=`<div class="g-row" style="${dim}"><div class="g-label"><span class="swatch" style="background:${cssv(p.color)}"></span>${p.name} ${p.cls}</div><div class="g-track"><div class="g-weeks" style="grid-template-columns:repeat(${N},1fr)">`;
+    WEEKS.forEach(w=>{ rows+=`<div class="wk${FERIE[w]?' ferie':''}"></div>`; });
+    rows+='</div>';
+    p.forlob.forEach(f=>{
+      const kind=f.kind||'normal';
+      parseWeeks(f.w).forEach(seg=>{
+        const left=seg.start*colpct, width=seg.len*colpct;
+        const bg = kind==='normal' ? cssv(p.color) : '';
+        const cls = kind==='tema'?'bar tema':kind==='lejr'?'bar lejr':'bar';
+        const txt = seg.len>=2 ? f.t : '';
+        rows+=`<div class="${cls}" style="left:${left}%;width:calc(${width}% - 3px);${bg?'background:'+bg:''}" data-t="${encodeURIComponent(f.t)}" data-f="${encodeURIComponent(f.f)}" data-w="${f.w}">${txt}</div>`;
+      });
+    });
+    rows+='</div></div>';
+  });
+  document.getElementById('gantt').innerHTML=head+rows;
+  document.querySelectorAll('#gantt .bar').forEach(b=>{
+    b.addEventListener('mouseenter',e=>showTip(e,`<b>Uge ${b.dataset.w}</b><br>${decodeURIComponent(b.dataset.t)}<br><span style="color:#bcd">${decodeURIComponent(b.dataset.f)}</span>`));
+    b.addEventListener('mousemove',moveTip);
+    b.addEventListener('mouseleave',hideTip);
+  });
+}
+// gantt filters
+(function(){
+  const wrap=document.getElementById('ganttFilters');
+  const opts=[['all','Alle hold','--klt']].concat(PLANS.map(p=>[p.id,`${p.name} ${p.cls}`,p.color]));
+  wrap.innerHTML=opts.map(([id,lbl,c],i)=>`<button class="filterbtn${i===0?' active':''}" data-g="${id}"><span class="swatch" style="background:${cssv(c)}"></span>${lbl}</button>`).join('');
+  wrap.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+    ganttFilter=btn.dataset.g;
+    wrap.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===btn));
+    renderGantt();
+  }));
+})();
+renderGantt();
+
+// plans
+let planFilter='all', planQuery='';
+function renderPlans(){
+  const c=document.getElementById('planContainer');
+  let html='';
+  PLANS.filter(p=>planFilter==='all'||planFilter===p.id).forEach(p=>{
+    const items=p.forlob.filter(f=>{
+      if(!planQuery)return true;
+      const q=planQuery.toLowerCase();
+      return (f.t+' '+f.f+' '+f.e).toLowerCase().includes(q);
+    });
+    if(!items.length)return;
+    html+=`<div class="plan-group"><h3><span class="swatch" style="width:13px;height:13px;background:${cssv(p.color)}"></span>${p.name} ${p.cls}<span class="tag" style="background:${cssv(p.color)}">${p.meta}</span></h3><div class="plan-grid">`;
+    items.forEach(f=>{
+      const kind=f.kind||'normal';
+      const accent = kind==='normal'?cssv(p.color):'';
+      const bottom = f.link
+        ? `<a class="forlobLink" href="${f.link}" target="_blank" rel="noopener">Åbn forløb &amp; opgaver ↗</a>`
+        : (f.e ? `<span class="eval">✓ ${f.e}</span>` : '');
+      html+=`<div class="pc ${kind}" ${accent?`style="border-left-color:${accent}"`:''}>
+        <div class="wkbadge">UGE ${f.w}</div>
+        <h4>${f.t}</h4>
+        <div class="focus">${f.f}</div>
+        ${bottom}</div>`;
+    });
+    html+='</div></div>';
+  });
+  c.innerHTML=html||'<p class="lead">Ingen forløb matcher søgningen.</p>';
+}
+(function(){
+  const wrap=document.getElementById('planFilters');
+  const opts=[['all','Alle','--klt']].concat(PLANS.map(p=>[p.id,`${p.name} ${p.cls}`,p.color]));
+  wrap.innerHTML=opts.map(([id,lbl,c],i)=>`<button class="filterbtn${i===0?' active':''}" data-p="${id}"><span class="swatch" style="background:${cssv(c)}"></span>${lbl}</button>`).join('');
+  wrap.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+    planFilter=btn.dataset.p;
+    wrap.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===btn));
+    renderPlans();
+  }));
+  document.getElementById('planSearch').addEventListener('input',e=>{planQuery=e.target.value;renderPlans();});
+})();
+renderPlans();
+
+// calendar
+(function(){
+  let html='<thead><tr><th>Ferie / aktivitet</th><th>Start</th><th>Slut</th></tr></thead><tbody>';
+  CAL.forEach(([n,s,e,c,sp])=>{
+    const pill = c?`<span class="pill" style="background:${cssv(c)}">●</span> `:'';
+    html+=`<tr class="${sp?'special':''}"><td>${pill}${n}</td><td>${s}</td><td>${e}</td></tr>`;
+  });
+  html+='</tbody>';
+  document.getElementById('calTable').innerHTML=html;
+})();
+
+// scrollspy
+const links=[...document.querySelectorAll('#menu a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll',()=>{
+  let idx=0;
+  secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<140)idx=i;});
+  links.forEach((a,i)=>a.classList.toggle('active',i===idx));
+});
+</script>
+</body>
+</html>
