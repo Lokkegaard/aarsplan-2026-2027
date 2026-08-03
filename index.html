@@ -208,6 +208,15 @@
             <li><b>Idræt og teknologiforståelse</b> – skovlege/teambuilding og teknologiobservationer indgår i programmet i stedet for ordinær undervisning</li>
           </ul>
         </div>
+        <div class="hcard">
+          <h3>Kodechamp – deadline</h3>
+          <div class="when">Uge 34–45 · deadline fredag i uge 45 · 4B, 5C og 6B</div>
+          <div>N/T erstattes af spiludviklingsforløbet Kodechamp: eleverne bygger et retro-computerspil i Scratch/CodingLab/TurboWarp fra idé til pixelart, lyd og kode. Finale og kåring af vindere er fredag d. 11. december.</div>
+          <ul>
+            <li><a href="https://www.kodechamp.dk/godt-i-gang/idéudvikling" target="_blank" rel="noopener">Kodechamps idéudviklingsproces</a></li>
+            <li><a href="https://www.kodechamp.dk/om-konkurrencen/tilmelding" target="_blank" rel="noopener">Husk tilmelding senest fredag i uge 45</a></li>
+          </ul>
+        </div>
         <div class="hcard tema">
           <h3>Temauge – mellemtrinnet</h3>
           <div class="when">Uge 41 · 5.–9. oktober 2026 · 4.–6. klasse</div>
@@ -299,12 +308,16 @@ const PLANS = [
     {w:'23–24',t:'Simuleringer',f:'Simuleringer i regneark, er et spil fair?',link:'https://app.skoledu.dk/opgaver/mellemtrin/sandsynlighed/forloeb/simuleringer'},
     {w:'25',t:'Perspektivtegning',f:'Forsvindingspunkter, front- og krydsperspektiv',link:'https://app.skoledu.dk/opgaver/mellemtrin/geometrisk-tegning/forloeb/perspektivtegning'}
    ]},
-  {id:'nt4b',name:'Natur/teknologi',cls:'4B',color:'--nt4b',meta:'3 lekt/uge · Man 3–4, Tir 4 · forløb fra naturfagene.dk, parallellagt med 5C/6B',
+  {id:'nt4b',name:'Natur/teknologi',cls:'4B',color:'--nt4b',meta:'3 lekt/uge · Man 3–4, Tir 4 · naturfagene.dk, parallellagt med 5C/6B · uge 34–45: Kodechamp',
    forlob:[
-    {w:'33–36',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
-    {w:'37–40',t:'Krop og træning',f:'Muskler, kondition og pulsforsøg — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/krop-og-traening'},
+    {w:'33',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
+    {w:'34',t:'Kodechamp: Scratch træningslejr',f:'Opvarmning i Scratch/CodingLab/TurboWarp med kodekort og øvelser, evt. et starterprojekt som stillads — hele klassen udvikler computerspil frem mod deadline i uge 45',link:'https://www.kodechamp.dk/godt-i-gang/scratchcodinglabturbowarp'},
+    {w:'35–37',t:'Kodechamp: Idéudvikling og design',f:'Idéskitser, idékompas, spilhistorie og prototypeskitse med need to have/nice to have; pitch og feedback i grupper',link:'https://www.kodechamp.dk/godt-i-gang/idéudvikling'},
+    {w:'38–40',t:'Kodechamp: Programmering – need to have',f:'Kodning af spillets kernemekanik i Scratch/CodingLab/TurboWarp ud fra prototypeskitsen',link:'https://www.kodechamp.dk/godt-i-gang/6-afgørende-koderåd'},
     {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
-    {w:'43–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 3.–4. kl. (5C/6B kører 5.–6.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
+    {w:'43–44',t:'Kodechamp: Pixelart, lyd og nice to have',f:'Design af egen pixelart-grafik og lydeffekter/musik; tilføj "nice to have"-elementer til spillet',link:'https://www.kodechamp.dk/lav-pixelart'},
+    {w:'45',t:'Kodechamp: Sidste finish og aflevering',f:'Test, fejlretning og indsendelse af spillet inden deadline fredag i uge 45',link:'https://www.kodechamp.dk/om-konkurrencen/indsend-spil'},
+    {w:'46–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 3.–4. kl. (5C/6B kører 5.–6.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
     {w:'49–51',t:'Myter og videnskab',f:'Fra myter til naturvidenskabelige forklaringer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/myter-og-videnskab'},
     {w:'2–6',t:'Kommunikation',f:'Fra sanser til satellitter – hvordan spredes information? Fælles forløb for 4.–6. kl. (4B er ikke omfattet af temauge uge 6)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kommunikation'},
     {w:'8–11',t:'Kort og kompas',f:'Kortlæsning, målestoksforhold og orientering i naturen — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kort-og-kompas'},
@@ -314,12 +327,16 @@ const PLANS = [
     {w:'19–22',t:'Planeter',f:'Solsystemets planeter og deres kendetegn — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/planeter'},
     {w:'23–25',t:'Forårsløb og evaluering',f:'Orienteringsløb i naturen med naturfaglige poster; afrunding af året — fælles for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/foraarsloeb'}
    ]},
-  {id:'nt5c',name:'Natur/teknologi',cls:'5C',color:'--nt5c',meta:'2 lekt/uge · Fre 3–4 · forløb fra naturfagene.dk, parallellagt med 4B/6B',
+  {id:'nt5c',name:'Natur/teknologi',cls:'5C',color:'--nt5c',meta:'2 lekt/uge · Fre 3–4 · naturfagene.dk, parallellagt med 4B/6B · uge 34–45: Kodechamp',
    forlob:[
-    {w:'33–36',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
-    {w:'37–40',t:'Krop og træning',f:'Muskler, kondition og pulsforsøg — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/krop-og-traening'},
+    {w:'33',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
+    {w:'34',t:'Kodechamp: Scratch træningslejr',f:'Opvarmning i Scratch/CodingLab/TurboWarp med kodekort og øvelser, evt. et starterprojekt som stillads — hele klassen udvikler computerspil frem mod deadline i uge 45',link:'https://www.kodechamp.dk/godt-i-gang/scratchcodinglabturbowarp'},
+    {w:'35–37',t:'Kodechamp: Idéudvikling og design',f:'Idéskitser, idékompas, spilhistorie og prototypeskitse med need to have/nice to have; pitch og feedback i grupper',link:'https://www.kodechamp.dk/godt-i-gang/idéudvikling'},
+    {w:'38–40',t:'Kodechamp: Programmering – need to have',f:'Kodning af spillets kernemekanik i Scratch/CodingLab/TurboWarp ud fra prototypeskitsen',link:'https://www.kodechamp.dk/godt-i-gang/6-afgørende-koderåd'},
     {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
-    {w:'43–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 5.–6. kl. (4B kører 3.–4.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
+    {w:'43–44',t:'Kodechamp: Pixelart, lyd og nice to have',f:'Design af egen pixelart-grafik og lydeffekter/musik; tilføj "nice to have"-elementer til spillet',link:'https://www.kodechamp.dk/lav-pixelart'},
+    {w:'45',t:'Kodechamp: Sidste finish og aflevering',f:'Test, fejlretning og indsendelse af spillet inden deadline fredag i uge 45',link:'https://www.kodechamp.dk/om-konkurrencen/indsend-spil'},
+    {w:'46–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 5.–6. kl. (4B kører 3.–4.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
     {w:'49–51',t:'Myter og videnskab',f:'Fra myter til naturvidenskabelige forklaringer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/myter-og-videnskab'},
     {w:'2–5',t:'Kommunikation',f:'Fra sanser til satellitter – hvordan spredes information? Fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kommunikation'},
     {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',e:'—',kind:'tema'},
@@ -330,12 +347,16 @@ const PLANS = [
     {w:'19–22',t:'Planeter',f:'Solsystemets planeter og deres kendetegn — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/planeter'},
     {w:'23–25',t:'Forårsløb og evaluering',f:'Orienteringsløb i naturen med naturfaglige poster; afrunding af året — fælles for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/foraarsloeb'}
    ]},
-  {id:'nt6b',name:'Natur/teknologi',cls:'6B',color:'--nt6b',meta:'2 lekt/uge · Man 5–6 · forløb fra naturfagene.dk, parallellagt med 4B/5C',
+  {id:'nt6b',name:'Natur/teknologi',cls:'6B',color:'--nt6b',meta:'2 lekt/uge · Man 5–6 · naturfagene.dk, parallellagt med 4B/5C · uge 34–45: Kodechamp',
    forlob:[
-    {w:'33–36',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
-    {w:'37–40',t:'Krop og træning',f:'Muskler, kondition og pulsforsøg — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/krop-og-traening'},
+    {w:'33',t:'Eksperimenter',f:'Naturfaglig metode: hypoteser, forsøg og konklusioner — fælles opstartsforløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/eksperimenter'},
+    {w:'34',t:'Kodechamp: Scratch træningslejr',f:'Opvarmning i Scratch/CodingLab/TurboWarp med kodekort og øvelser, evt. et starterprojekt som stillads — hele klassen udvikler computerspil frem mod deadline i uge 45',link:'https://www.kodechamp.dk/godt-i-gang/scratchcodinglabturbowarp'},
+    {w:'35–37',t:'Kodechamp: Idéudvikling og design',f:'Idéskitser, idékompas, spilhistorie og prototypeskitse med need to have/nice to have; pitch og feedback i grupper',link:'https://www.kodechamp.dk/godt-i-gang/idéudvikling'},
+    {w:'38–40',t:'Kodechamp: Programmering – need to have',f:'Kodning af spillets kernemekanik i Scratch/CodingLab/TurboWarp ud fra prototypeskitsen',link:'https://www.kodechamp.dk/godt-i-gang/6-afgørende-koderåd'},
     {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
-    {w:'43–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 5.–6. kl. (4B kører 3.–4.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
+    {w:'43–44',t:'Kodechamp: Pixelart, lyd og nice to have',f:'Design af egen pixelart-grafik og lydeffekter/musik; tilføj "nice to have"-elementer til spillet',link:'https://www.kodechamp.dk/lav-pixelart'},
+    {w:'45',t:'Kodechamp: Sidste finish og aflevering',f:'Test, fejlretning og indsendelse af spillet inden deadline fredag i uge 45',link:'https://www.kodechamp.dk/om-konkurrencen/indsend-spil'},
+    {w:'46–48',t:'Bæredygtighed og klima',f:'Ressourcer, CO2 og klimaaftryk — niveau 5.–6. kl. (4B kører 3.–4.-niveauet parallelt)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/baeredygtighed-og-klima'},
     {w:'49–51',t:'Myter og videnskab',f:'Fra myter til naturvidenskabelige forklaringer — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/myter-og-videnskab'},
     {w:'2–6',t:'Kommunikation',f:'Fra sanser til satellitter – hvordan spredes information? Fælles forløb for 4.–6. kl. (6B er ikke omfattet af temauge uge 6)',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kommunikation'},
     {w:'8–11',t:'Kort og kompas',f:'Kortlæsning, målestoksforhold og orientering i naturen — fælles forløb for 4.–6. kl.',link:'https://naturfagene.dk/naturfag/undervisningsforloeb/kort-og-kompas'},
