@@ -167,6 +167,7 @@
       <h2 class="sec">Ugeskema</h2>
       <p class="lead">Farvekodet efter fag. Bemærk dobbeltlektionerne — oplagt til natur/teknologi-forsøg og sammenhængende forløb.</p>
       <div class="grid-wrap"><table class="sched" id="schedTable"></table></div>
+      <div class="note">Teknologiforståelse er et forsøgsfag uden fast klasse — placering, klasse og skema for faget kan derfor ændre sig i løbet af året.</div>
     </section>
 
     <!-- AARSHJUL -->
@@ -195,6 +196,20 @@
       <div class="eyebrow">Husk at planlægge</div>
       <h2 class="sec">Vigtige uger</h2>
       <div class="hcards">
+        <div class="hcard">
+          <h3>Ud af huset – 5. årgang</h3>
+          <div class="when">Hele skoleåret · diverse datoer · 5A, 5B og 5C</div>
+          <div>Faste ekskursioner og fælles arrangementer for hele årgangen, jf. årshjulet fra årgangsteamet.</div>
+          <ul>
+            <li><b>Haver til maver</b> (5A/5C, kl. 08.00–13.45, LS/SY/HEL): man. 24. aug., man. 7. sep., man. 21. sep. og man. 5. okt. 2026</li>
+            <li><b>Skolekoncert</b> – Rune Thorsteinsson Patchwork &amp; Odense Symfoniorkester: fre. 18. sep. 2026, kl. 11.30–13.30 (hele 5. årg.)</li>
+            <li><b>Motionsdag</b>: fre. 9. okt. 2026 (dagen efter emneugen, inden efterårsferien)</li>
+            <li><b>Jernbanemuseet</b> (kl. 10.00–12.00): 5A man. 19. okt., 5B tir. 20. okt. (US-kursus fra kl. 12.15, Jacob cykler selv), <b>5C ons. 21. okt. 2026</b></li>
+            <li><b>Nørregårdteateret – Spøgelseshuset</b> (kl. 11.30–12.30): <b>5C tor. 21. jan.</b>, 5A+5B fre. 22. jan. 2027</li>
+            <li><b>Forældremøde om lejrskole</b>: tor. 25. feb. 2027, kl. 16.00–17.00 (uge 8)</li>
+            <li><b>Kulturfestival</b>: tor. 20. maj 2027</li>
+          </ul>
+        </div>
         <div class="hcard">
           <h3>Lejrskole i Aarhus</h3>
           <div class="when">Uge 13 · 30. marts – 2. april 2027 · 5. årgang</div>
@@ -232,8 +247,8 @@
         </div>
         <div class="hcard tema">
           <h3>Temauge – mellemtrinnet</h3>
-          <div class="when">Uge 41 · 5.–9. oktober 2026 · 4.–6. klasse</div>
-          <div>Fælles emne på hele mellemtrinnet. Emnet ligger ikke fast endnu og aftales med kollegerne. Berører matematik 5C, N/T på 4B, 5C og 6B, historie 5C/5B, idræt 4A/5C og teknologiforståelse 5C.</div>
+          <div class="when">Uge 41 · 5.–8. oktober 2026 · 4.–6. klasse</div>
+          <div>Fælles emne på hele mellemtrinnet. Emnet ligger ikke fast endnu og aftales med kollegerne. Berører matematik 5C, N/T på 4B, 5C og 6B, historie 5C/5B, idræt 4A/5C og teknologiforståelse 5C. Fredag 9. oktober er Motionsdag i stedet for ordinær undervisning.</div>
           <ul><li>Påmindelse er sat til <b>mandag 14. september 2026</b>.</li></ul>
         </div>
         <div class="hcard tema">
@@ -271,10 +286,10 @@ const legend = [
 // schedule grid: 7 lektioner x 5 dage. each cell [class, subjectKey] or null
 const DAYS = ['Mandag','Tirsdag','Onsdag','Torsdag','Fredag'];
 const SCHED = [
-  [['5C','MAT'],['5C','MAT'],['5C','HIS'],null,null],
-  [['5C','MAT'],['5C','MAT'],['5C','HIS'],null,null],
-  [['4B','NT'],['5C','KLT'],['5C','TECH'],null,['5C','NT']],
-  [['4B','NT'],['4B','NT'],['5C','TECH'],['5C','MAT'],['5C','NT']],
+  [['5C','MAT'],['5C','MAT'],['5C','TECH'],null,null],
+  [['5C','MAT'],['5C','MAT'],['5C','TECH'],null,null],
+  [['4B','NT'],['5C','KLT'],['5C','HIS'],null,['5C','NT']],
+  [['4B','NT'],['4B','NT'],['5C','HIS'],['5C','MAT'],['5C','NT']],
   [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
   [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
   [null,['','TEAM5'],null,null,null]
@@ -420,7 +435,7 @@ const PLANS = [
     {w:'20–24',t:'Ropeskipping',f:'Sjipning alene og sammen med andre — og måske et par nye tricks, udendørs',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/ropeskipping'},
     {w:'25',t:'Forårsatletik og evaluering',f:'Afsluttende idrætsøvelser i skolegården og evaluering af årets forløb'}
    ]},
-  {id:'tech5c',name:'Teknologiforståelse',cls:'5C',color:'--tech',meta:'2 lekt/uge · Ons 3–4 · forsøgsfag · forløb fra tekforsøget.dk, emu.dk m.fl.',
+  {id:'tech5c',name:'Teknologiforståelse',cls:'5C',color:'--tech',meta:'2 lekt/uge · Ons 1–2 (kan ændre sig) · forsøgsfag uden fast klasse · forløb fra tekforsøget.dk, emu.dk m.fl.',
    forlob:[
     {w:'33–39',t:'Digitale spor og myndiggørelse',f:'Hvad er teknologiforståelse? Data, digitale fodspor og kildekritik online',link:'https://emu.dk/grundskole/teknologiforstaaelse/bliv-klogere-paa-teknologiforstaaelse'},
     {w:'40, 43–48',t:'Computationel tankegang',f:'Algoritmer i hverdagen, sekvenser og indledende programmering',link:'https://studio.code.org/courses'},
@@ -436,15 +451,28 @@ const PLANS = [
 
 const CAL = [
   ['Skolestart','Mandag 10. august 2026','—','',false],
+  ['Haver til maver (5A/5C)','Man 24. aug. 2026','—','',false],
+  ['Haver til maver (5A/5C)','Man 7. sep. 2026','—','',false],
+  ['Skolekoncert: Rune Thorsteinsson Patchwork','Fre 18. sep. 2026','—','',false],
+  ['Haver til maver (5A/5C)','Man 21. sep. 2026','—','',false],
+  ['Haver til maver (5A/5C)','Man 5. okt. 2026','—','',false],
+  ['Temauge mellemtrin (uge 41)','Man 5. okt. 2026','Tor 8. okt. 2026','--tema',true],
+  ['Motionsdag','Fre 9. okt. 2026','—','',false],
   ['Efterårsferie (uge 42)','Lør 10. okt. 2026','Søn 18. okt. 2026','--ferie',false],
-  ['Temauge mellemtrin (uge 41)','Man 5. okt. 2026','Fre 9. okt. 2026','--tema',true],
+  ['5A på Jernbanemuseet','Man 19. okt. 2026','—','',false],
+  ['5B på Jernbanemuseet','Tir 20. okt. 2026','—','',false],
+  ['5C på Jernbanemuseet','Ons 21. okt. 2026','—','',true],
   ['Juleferie','Man 21. dec. 2026','Man 4. jan. 2027','--ferie',false],
+  ['Nørregårdteateret: Spøgelseshuset (5C)','Tor 21. jan. 2027','—','',true],
+  ['Nørregårdteateret: Spøgelseshuset (5A+5B)','Fre 22. jan. 2027','—','',false],
   ['Temauge årgang (uge 6)','Man 8. feb. 2027','Fre 12. feb. 2027','--tema',true],
   ['Vinterferie (uge 7)','Lør 13. feb. 2027','Søn 21. feb. 2027','--ferie',false],
+  ['Forældremøde – lejrskole (uge 8)','Tor 25. feb. 2027','—','',false],
   ['Påskeferie','Lør 20. marts 2027','Man 29. marts 2027','--ferie',false],
   ['Lejrskole Aarhus (uge 13)','Tir 30. marts 2027','Fre 2. april 2027','--lejr',true],
   ['Kr. Himmelfart','Tor 6. maj 2027','Fre 7. maj 2027','--ferie',false],
   ['Pinse (2. pinsedag)','Man 17. maj 2027','—','--ferie',false],
+  ['Kulturfestival','Tor 20. maj 2027','—','',false],
   ['Sidste skoledag','Fredag 25. juni 2027','—','',false],
   ['Sommerferie','Lør 26. juni 2027','Søn 8. aug. 2027','--ferie',false]
 ];
