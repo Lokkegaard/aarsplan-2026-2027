@@ -10,7 +10,7 @@
     --line:#e3ddd1; --line2:#ece7dc; --accent:#b9772b; --accent-soft:#f3e6d2;
     --sidebar:#22384a; --sidebar-ink:#dce6ee;
     --mat:#2f6f9f; --nt4b:#3f8f76; --nt5c:#2e8b57; --nt6b:#6f8a32;
-    --his:#b88227; --dan:#b5544a; --idr:#7d62b3; --tech:#3f8a8a;
+    --his:#b88227; --dan:#b5544a; --idr:#7d62b3;
     --klt:#8a8f98; --team:#d98a3d; --ferie:#c4bdab; --tema:#8b6db5; --lejr:#df8a3c;
   }
   *{box-sizing:border-box}
@@ -151,10 +151,10 @@
     <section id="overblik">
       <div class="eyebrow">Skoleåret 2026/2027</div>
       <h2 class="sec">Overblik</h2>
-      <p class="lead">Du er klasselærer for 5C og underviser i matematik, natur/teknologi, historie, idræt og teknologiforståelse på tværs af 4.–6. klasse (dansk 5B er ikke medtaget her). Her er hele året samlet ét sted. Tyngdepunkterne — matematik 5C og N/T på tre klassetrin — har fulde årsplaner.</p>
+      <p class="lead">Du er klasselærer for 5C og underviser i matematik, natur/teknologi, historie og idræt på tværs af 4.–6. klasse (dansk 5B er ikke medtaget her). Her er hele året samlet ét sted. Tyngdepunkterne — matematik 5C og N/T på tre klassetrin — har fulde årsplaner.</p>
       <div class="facts">
         <div class="fact"><div class="num">~25</div><div class="lbl">lektioner pr. uge</div></div>
-        <div class="fact"><div class="num">9</div><div class="lbl">fag/hold</div></div>
+        <div class="fact"><div class="num">7</div><div class="lbl">fag/hold</div></div>
         <div class="fact"><div class="num">~40</div><div class="lbl">undervisningsuger</div></div>
         <div class="fact"><div class="num">5C</div><div class="lbl">din klasse</div></div>
       </div>
@@ -167,7 +167,6 @@
       <h2 class="sec">Ugeskema</h2>
       <p class="lead">Farvekodet efter fag. Bemærk dobbeltlektionerne — oplagt til natur/teknologi-forsøg og sammenhængende forløb.</p>
       <div class="grid-wrap"><table class="sched" id="schedTable"></table></div>
-      <div class="note">Teknologiforståelse er et forsøgsfag uden fast klasse — placering, klasse og skema for faget kan derfor ændre sig i løbet af året.</div>
     </section>
 
     <!-- AARSHJUL -->
@@ -220,7 +219,7 @@
             <li><b>ARoS</b> – kunst, farver og perspektiv (billedkunst &amp; dansk)</li>
             <li><b>Skoven ved Risskov</b> – feltarbejde og naturfaglig logbog</li>
             <li><b>Matematik på tur</b> – afstande, budget, målestok, køreplaner</li>
-            <li><b>Idræt og teknologiforståelse</b> – skovlege/teambuilding og teknologiobservationer indgår i programmet i stedet for ordinær undervisning</li>
+            <li><b>Idræt</b> – skovlege/teambuilding indgår i programmet i stedet for ordinær undervisning</li>
           </ul>
         </div>
         <div class="hcard">
@@ -248,13 +247,13 @@
         <div class="hcard tema">
           <h3>Temauge – mellemtrinnet</h3>
           <div class="when">Uge 41 · 5.–8. oktober 2026 · 4.–6. klasse</div>
-          <div>Fælles emne på hele mellemtrinnet. Emnet ligger ikke fast endnu og aftales med kollegerne. Berører matematik 5C, N/T på 4B, 5C og 6B, historie 5C/5B, idræt 4A/5C og teknologiforståelse 5C. Fredag 9. oktober er Motionsdag i stedet for ordinær undervisning.</div>
+          <div>Fælles emne på hele mellemtrinnet. Emnet ligger ikke fast endnu og aftales med kollegerne. Berører matematik 5C, N/T på 4B, 5C og 6B, historie 5C/5B og idræt 4A/5C. Fredag 9. oktober er Motionsdag i stedet for ordinær undervisning.</div>
           <ul><li>Påmindelse er sat til <b>mandag 14. september 2026</b>.</li></ul>
         </div>
         <div class="hcard tema">
           <h3>Temauge – årgangen</h3>
           <div class="when">Uge 6 · 8.–12. februar 2027 · 5. årgang</div>
-          <div>Fælles emne på 5. årgang (5C og 5B). Aftales i TEAM5. Berører matematik 5C, N/T 5C, historie 5C/5B, idræt 5C og teknologiforståelse 5C.</div>
+          <div>Fælles emne på 5. årgang (5C og 5B). Aftales i TEAM5. Berører matematik 5C, N/T 5C, historie 5C/5B og idræt 5C.</div>
           <ul><li>Påmindelse er sat til <b>mandag 18. januar 2027</b>.</li></ul>
         </div>
       </div>
@@ -275,26 +274,26 @@
 
 <script>
 /* ---------------- DATA ---------------- */
-const SUBJECT_COLORS = {MAT:'--mat',NT:'--nt5c',HIS:'--his',DAN:'--dan',IDR:'--idr',TECH:'--tech',KLT:'--klt',TEAM:'--team'};
+const SUBJECT_COLORS = {MAT:'--mat',NT:'--nt5c',HIS:'--his',DAN:'--dan',IDR:'--idr',KLT:'--klt',TEAM:'--team'};
 function cssv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
 
 const legend = [
   ['Matematik','--mat'],['Natur/teknologi','--nt5c'],['Historie','--his'],['Dansk','--dan'],
-  ['Idræt','--idr'],['Teknologi','--tech'],['Temauge','--tema'],['Lejrskole','--lejr'],['Ferie','--ferie']
+  ['Idræt','--idr'],['Temauge','--tema'],['Lejrskole','--lejr'],['Ferie','--ferie']
 ];
 
 // schedule grid: 7 lektioner x 5 dage. each cell [class, subjectKey] or null
 const DAYS = ['Mandag','Tirsdag','Onsdag','Torsdag','Fredag'];
 const SCHED = [
-  [['5C','MAT'],['5C','MAT'],['5C','TECH'],null,null],
-  [['5C','MAT'],['5C','MAT'],['5C','TECH'],null,null],
+  [['5C','MAT'],['5C','MAT'],null,null,null],
+  [['5C','MAT'],['5C','MAT'],null,null,null],
   [['4B','NT'],['5C','KLT'],['5C','HIS'],null,['5C','NT']],
   [['4B','NT'],['4B','NT'],['5C','HIS'],['5C','MAT'],['5C','NT']],
   [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
   [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
   [null,['','TEAM5'],null,null,null]
 ];
-const SUBLABEL = {MAT:'Matematik',NT:'N/T',HIS:'Historie',DAN:'Dansk',IDR:'Idræt (hal)',TECH:'Teknologi',KLT:'Klassens tid',TEAM5:'Teammøde'};
+const SUBLABEL = {MAT:'Matematik',NT:'N/T',HIS:'Historie',DAN:'Dansk',IDR:'Idræt (hal)',KLT:'Klassens tid',TEAM5:'Teammøde'};
 
 // ordered school weeks
 const WEEKS = [];
@@ -435,18 +434,6 @@ const PLANS = [
     {w:'14–18',t:'Leg med atletikdisciplinerne',f:'Løbe-, spring- og kasteøvelser gennem lege, udendørs efter lejrskolen (parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/leg-med-atletikdisciplinerne'},
     {w:'19–24',t:'Footbag',f:'Tricks og spil med footbag udendørs (parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/footbag'},
     {w:'25',t:'Forårsatletik og evaluering',f:'Afsluttende idrætsøvelser i skolegården og evaluering af årets forløb (parallellagt med 4A)'}
-   ]},
-  {id:'tech5c',name:'Teknologiforståelse',cls:'5C',color:'--tech',meta:'2 lekt/uge · Ons 1–2 (kan ændre sig) · forsøgsfag uden fast klasse · forløb fra tekforsøget.dk, emu.dk m.fl.',
-   forlob:[
-    {w:'33–39',t:'Digitale spor og myndiggørelse',f:'Hvad er teknologiforståelse? Data, digitale fodspor og kildekritik online',link:'https://emu.dk/grundskole/teknologiforstaaelse/bliv-klogere-paa-teknologiforstaaelse'},
-    {w:'40, 43–48',t:'Computationel tankegang',f:'Algoritmer i hverdagen, sekvenser og indledende programmering',link:'https://studio.code.org/courses'},
-    {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
-    {w:'49–5',t:'Digital design: fra idé til prototype',f:'Designprocessen i praksis: brainstorm, mock-ups og brugertest',link:'https://emu.dk/grundskole/teknologiforstaaelse/teknologiforstaaelse-i-praksis'},
-    {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',e:'—',kind:'tema'},
-    {w:'8–12',t:'Programmering med micro:bit',f:'Sensorer, input/output og simple programmer med Ultra:bit',link:'https://www.dr.dk/skole/ultrabit'},
-    {w:'13',t:'Lejrskole i Aarhus',f:'Teknologi i praksis – evt. besøg på museum/virksomhed som del af lejrskoleprogrammet',e:'Observationsnoter',kind:'lejr'},
-    {w:'14–19',t:'Teknologisk handleevne',f:'Teknologiens konsekvenser, algoritmer i sociale medier og etik',link:'https://www.tjekdet.dk/undervisning/begrebsguide-til-teknologiforstaaelse-med-16-smaa-videoer'},
-    {w:'20–25',t:'Afsluttende designprojekt',f:'Løs et hverdagsproblem med teknologi; præsentation for klassen',link:'https://xn--tekforsget-6cb.dk/forlob/'}
    ]}
 ];
 
