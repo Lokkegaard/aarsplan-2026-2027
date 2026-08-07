@@ -185,7 +185,7 @@
     <section id="aarsplaner">
       <div class="eyebrow">Forløb fag for fag</div>
       <h2 class="sec">Årsplaner</h2>
-      <p class="lead">Hvert forløb er koblet til Fælles Måls kompetenceområder. N/T-forløbene på 4B, 5C og 6B er parallellagt uge for uge — samme forløb fra naturfagene.dk går på tværs af klassetrinnene (med grenet niveau i "Bæredygtighed og klima"), så du kan samle materialer og forberede én gang til alle tre hold. Filtrér på hold, eller søg i emnerne.</p>
+      <p class="lead">Hvert forløb er koblet til Fælles Måls kompetenceområder. N/T-forløbene på 4B, 5C og 6B er parallellagt uge for uge — samme forløb fra naturfagene.dk går på tværs af klassetrinnene (med grenet niveau i "Bæredygtighed og klima"), så du kan samle materialer og forberede én gang til alle tre hold. Idræt på 4A og 5C er ligeledes parallellagt uge for uge med samme forløb fra idraet1-6.gyldendal.dk. Filtrér på hold, eller søg i emnerne.</p>
       <div class="controls" id="planFilters"></div>
       <div class="controls"><input class="search" id="planSearch" placeholder="Søg i forløb, fx „brøker“ eller „vand“…"></div>
       <div id="planContainer"></div>
@@ -409,31 +409,32 @@ const PLANS = [
     {w:'21–24',t:'Historie-Stratego',f:'Historiske personer og kanonpunkter (Harald Blåtand, Absalon); perspektivering til nutiden',link:'https://www.historiefidusen.dk/blandet-godt/gode-spil'},
     {w:'25',t:'Afslutning',f:'Afsluttende historielege og opsamling på årets temaer',link:'https://www.historiefidusen.dk/vikartimen'}
    ]},
-  {id:'idr4a',name:'Idræt',cls:'4A',color:'--idr',meta:'2 lekt/uge · Tor 5–6 · udendørs aug–efterårsferie, indendørs (hallen) efterårsferie–påske, udendørs påske–sommer · forløb fra idraet1-6.gyldendal.dk',
+  {id:'idr4a',name:'Idræt',cls:'4A',color:'--idr',meta:'2 lekt/uge · Tor 5–6 · udendørs aug–efterårsferie, indendørs (hallen) efterårsferie–påske, udendørs påske–sommer · parallellagt med 5C · forløb fra idraet1-6.gyldendal.dk',
    forlob:[
-    {w:'33–37',t:'Atletik med teknik',f:'Sprint, stafet, længdespring og boldkast — grundteknik frem mod en fælles atletikdag i skolegården (udendørs)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/atletik-med-teknik'},
-    {w:'38–40',t:'Boldbasis',f:'Boldkontrol, kast og gribe samt samarbejde med rund bold, udendørs (afkortet pga. temauge uge 41)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/boldbasis'},
+    {w:'33–37',t:'Atletik med teknik',f:'Sprint, stafet, længdespring og boldkast — grundteknik frem mod en fælles atletikdag i skolegården (udendørs, parallellagt med 5C)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/atletik-med-teknik'},
+    {w:'38–40',t:'Naturlige bevægelser',f:'Klatring, spring mellem forhindringer og kravlebaner udendørs (afkortet pga. temauge uge 41, parallellagt med 5C)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/naturlige-bevaegelser'},
     {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
-    {w:'43–48',t:'Væk din gymnastikkrop',f:'Fange- og kamplege med elementer fra redskabsgymnastik — nu i hallen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/vaek-din-gymnastikkrop'},
-    {w:'49–51,2–4',t:'Basketball',f:'Kaste-, gribe-, drible- og forsvarsteknikker; streetbasket og børnebasket i hallen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/basketball'},
-    {w:'5–6,8–11',t:'Med hovedet nedad',f:'Håndstand, vejrmøller og araberspring med fokus på en god og sikker landing — i hallen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/med-hovedet-nedad'},
-    {w:'13–17',t:'Leg med atletikdisciplinerne',f:'Løbe-, spring- og kasteøvelser gennem lege — tilbage udendørs efter påske',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/leg-med-atletikdisciplinerne'},
-    {w:'18–23',t:'Footbag',f:'Tricks og spil med footbag udendørs',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/footbag'},
-    {w:'24–25',t:'Forårsatletik og evaluering',f:'Afsluttende atletikøvelser i skolegården og evaluering af årets idrætsforløb'}
+    {w:'43–48',t:'Væk din gymnastikkrop',f:'Fange- og kamplege med elementer fra redskabsgymnastik — i hallen (parallellagt med 5C)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/vaek-din-gymnastikkrop'},
+    {w:'49–51,1–4',t:'Basketball',f:'Kaste-, gribe-, drible- og forsvarsteknikker; streetbasket og børnebasket i hallen (parallellagt med 5C, fra start af december)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/basketball'},
+    {w:'5–6,8–11',t:'Med hovedet nedad',f:'Håndstand, vejrmøller og araberspring med fokus på en god og sikker landing — i hallen (parallellagt med 5C; 4A er ikke omfattet af temauge uge 6)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/med-hovedet-nedad'},
+    {w:'13',t:'Leg med atletikdisciplinerne',f:'Opstart på løbe-, spring- og kasteøvelser gennem lege, udendørs (5C er på lejrskole denne uge)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/leg-med-atletikdisciplinerne'},
+    {w:'14–18',t:'Leg med atletikdisciplinerne',f:'Fortsat løbe-, spring- og kasteøvelser gennem lege, udendørs (parallellagt med 5C)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/leg-med-atletikdisciplinerne'},
+    {w:'19–24',t:'Footbag',f:'Tricks og spil med footbag udendørs (parallellagt med 5C)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/footbag'},
+    {w:'25',t:'Forårsatletik og evaluering',f:'Afsluttende atletikøvelser i skolegården og evaluering af årets idrætsforløb (parallellagt med 5C)'}
    ]},
-  {id:'idr5c',name:'Idræt',cls:'5C',color:'--idr',meta:'2 lekt/uge · Fre 5–6 · udendørs aug–efterårsferie, indendørs (hallen) efterårsferie–påske, udendørs påske–sommer · forløb fra idraet1-6.gyldendal.dk',
+  {id:'idr5c',name:'Idræt',cls:'5C',color:'--idr',meta:'2 lekt/uge · Fre 5–6 · udendørs aug–efterårsferie, indendørs (hallen) efterårsferie–påske, udendørs påske–sommer · parallellagt med 4A · forløb fra idraet1-6.gyldendal.dk',
    forlob:[
-    {w:'33–37',t:'Springe, løbe og støde',f:'Hækkeløb, stafet, længdespring, stød og kast — god teknik og en god vinder-/taberkultur (udendørs)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/springe-loebe-og-stoede'},
-    {w:'38–40',t:'Naturlige bevægelser',f:'Klatring, spring mellem forhindringer og kravlebaner udendørs (afkortet pga. temauge uge 41)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/naturlige-bevaegelser'},
+    {w:'33–37',t:'Atletik med teknik',f:'Sprint, stafet, længdespring og boldkast — grundteknik frem mod en fælles atletikdag i skolegården (udendørs, parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/atletik-med-teknik'},
+    {w:'38–40',t:'Naturlige bevægelser',f:'Klatring, spring mellem forhindringer og kravlebaner udendørs (afkortet pga. temauge uge 41, parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/naturlige-bevaegelser'},
     {w:'41',t:'Temauge – mellemtrinnet',f:'Fælles tværfagligt emne (4.–6. kl.)',e:'—',kind:'tema'},
-    {w:'43–48',t:'Fra rulle til salto',f:'Flyveruller og salto med fokus på sikker modtagning — i hallen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/fra-rulle-til-salto'},
-    {w:'49–51,2–4',t:'Basketball',f:'Kaste-, gribe-, drible- og forsvarsteknikker; streetbasket og børnebasket i hallen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/basketball'},
-    {w:'5,8–11',t:'Dansefortællinger',f:'Krop, udtryk og fortælling gennem dans — i hallen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/dansefortaellinger'},
+    {w:'43–48',t:'Væk din gymnastikkrop',f:'Fange- og kamplege med elementer fra redskabsgymnastik — i hallen (parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/vaek-din-gymnastikkrop'},
+    {w:'49–51,1–4',t:'Basketball',f:'Kaste-, gribe-, drible- og forsvarsteknikker; streetbasket og børnebasket i hallen (parallellagt med 4A, fra start af december)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/basketball'},
+    {w:'5,8–11',t:'Med hovedet nedad',f:'Håndstand, vejrmøller og araberspring med fokus på en god og sikker landing — i hallen (parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/med-hovedet-nedad'},
     {w:'6',t:'Temauge – årgangen',f:'Fælles emne på 5. årgang',e:'—',kind:'tema'},
-    {w:'13',t:'Lejrskole i Aarhus',f:'Natur og udeliv: vandreture, skovlege og teambuilding ved vandrehjemmet i Risskov',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/undervisningsmateriale-natur-og-udeliv/',kind:'lejr'},
-    {w:'14–19',t:'Footbag',f:'Tricks og spil med footbag udendørs efter lejrskolen',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/footbag'},
-    {w:'20–24',t:'Ropeskipping',f:'Sjipning alene og sammen med andre — og måske et par nye tricks, udendørs',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/ropeskipping'},
-    {w:'25',t:'Forårsatletik og evaluering',f:'Afsluttende idrætsøvelser i skolegården og evaluering af årets forløb'}
+    {w:'13',t:'Lejrskole i Aarhus',f:'Natur og udeliv: vandreture, skovlege og teambuilding ved vandrehjemmet i Risskov (4A kører parallelt „Leg med atletikdisciplinerne" hjemme)',link:'https://skoleidraet.dk/idraetsfaget/idraetsforloeb/forloeb-og-aktiviteter-til-mellemtrin/indholdsomraader-mellemtrin/undervisningsmateriale-natur-og-udeliv/',kind:'lejr'},
+    {w:'14–18',t:'Leg med atletikdisciplinerne',f:'Løbe-, spring- og kasteøvelser gennem lege, udendørs efter lejrskolen (parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/leg-med-atletikdisciplinerne'},
+    {w:'19–24',t:'Footbag',f:'Tricks og spil med footbag udendørs (parallellagt med 4A)',link:'https://idraet1-6.gyldendal.dk/forloeb-til-3-6-klasse/footbag'},
+    {w:'25',t:'Forårsatletik og evaluering',f:'Afsluttende idrætsøvelser i skolegården og evaluering af årets forløb (parallellagt med 4A)'}
    ]},
   {id:'tech5c',name:'Teknologiforståelse',cls:'5C',color:'--tech',meta:'2 lekt/uge · Ons 1–2 (kan ændre sig) · forsøgsfag uden fast klasse · forløb fra tekforsøget.dk, emu.dk m.fl.',
    forlob:[
