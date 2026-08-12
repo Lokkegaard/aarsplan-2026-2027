@@ -10,7 +10,7 @@
     --line:#e3ddd1; --line2:#ece7dc; --accent:#b9772b; --accent-soft:#f3e6d2;
     --sidebar:#22384a; --sidebar-ink:#dce6ee;
     --mat:#2f6f9f; --nt4b:#3f8f76; --nt5c:#2e8b57; --nt6b:#6f8a32;
-    --his:#b88227; --dan:#b5544a; --idr:#7d62b3;
+    --his:#b88227; --dan:#b5544a; --idr:#7d62b3; --tekv:#3f8a8a;
     --klt:#8a8f98; --team:#d98a3d; --ferie:#c4bdab; --tema:#8b6db5; --lejr:#df8a3c;
   }
   *{box-sizing:border-box}
@@ -274,7 +274,7 @@
 
 <script>
 /* ---------------- DATA ---------------- */
-const SUBJECT_COLORS = {MAT:'--mat',NT:'--nt5c',HIS:'--his',DAN:'--dan',IDR:'--idr',KLT:'--klt',TEAM:'--team'};
+const SUBJECT_COLORS = {MAT:'--mat',NT:'--nt5c',HIS:'--his',DAN:'--dan',IDR:'--idr',TEKV:'--tekv',KLT:'--klt',TEAM:'--team'};
 function cssv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
 
 const legend = [
@@ -285,15 +285,15 @@ const legend = [
 // schedule grid: 7 lektioner x 5 dage. each cell [class, subjectKey] or null
 const DAYS = ['Mandag','Tirsdag','Onsdag','Torsdag','Fredag'];
 const SCHED = [
-  [['5C','MAT'],['5C','MAT'],null,null,null],
-  [['5C','MAT'],['5C','MAT'],null,null,null],
+  [['5C','MAT'],['5C','MAT'],['5C','TEKV'],null,null],
+  [['5C','MAT'],['5C','MAT'],['5C','TEKV'],null,null],
   [['4B','NT'],['5C','KLT'],['5C','HIS'],null,['5C','NT']],
   [['4B','NT'],['4B','NT'],['5C','HIS'],['5C','MAT'],['5C','NT']],
   [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
   [['6B','NT'],['5B','HIS'],['5B','DAN'],['4A','IDR'],['5C','IDR']],
   [null,['','TEAM5'],null,null,null]
 ];
-const SUBLABEL = {MAT:'Matematik',NT:'N/T',HIS:'Historie',DAN:'Dansk',IDR:'Idræt (hal)',KLT:'Klassens tid',TEAM5:'Teammøde'};
+const SUBLABEL = {MAT:'Matematik',NT:'N/T',HIS:'Historie',DAN:'Dansk',IDR:'Idræt (hal)',TEKV:'Teknologivejledning',KLT:'Klassens tid',TEAM5:'Teammøde'};
 
 // ordered school weeks
 const WEEKS = [];
